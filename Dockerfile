@@ -70,7 +70,7 @@ ENV CLASSPATH $CLASSPATH:/hyperdex_build/ycsb-0.1.4/core/lib/core-0.1.4.jar
 WORKDIR /hyperdex_build
 RUN wget http://hyperdex.org/src/hyperdex-1.6.0.tar.gz && tar xzf hyperdex-1.6.0.tar.gz
 WORKDIR /hyperdex_build/hyperdex-1.6.0
-RUN autoreconf -i;./configure --enable-java-bindings --enable-ycsb && make && make install
+RUN autoreconf -i;./configure --enable-java-bindings --enable-ycsb --enable-python-bindings && make && make install
 
 ENV CLASSPATH $CLASSPATH:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperdex.client-1.6.0.jar:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperdex.ycsb-1.6.0.jar
 
